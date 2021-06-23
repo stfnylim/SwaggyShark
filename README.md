@@ -7,6 +7,12 @@ The game has a shark that is avoiding exploding bombs and electric jellyfishes u
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+https://user-images.githubusercontent.com/31866447/123019549-8c20c100-d385-11eb-8ead-004f5e766eff.mp4
+
+
+
 Done so far:
 
 -> Created hand drawn pixel art animations and background components
@@ -18,6 +24,7 @@ Done so far:
 -> Once the player is dead, it returns to main menu for a play again option
 
 -> Coin spawning and bank account has been added
+
 
 TODO:
 
