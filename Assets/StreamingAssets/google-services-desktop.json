@@ -1,0 +1,36 @@
+{
+  "project_info": {
+    "project_number": "277806246431",
+    "project_id": "swaggyshark-a2a6c",
+    "storage_bucket": "swaggyshark-a2a6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277806246431:ios:20981aa8f0a5c9dba8432a",
+        "android_client_info": {
+          "package_name": "com.devanie.swaggyshark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "277806246431-41ol927itkm5n84cjau7d016i8p9ql0g.apps.googleusercontent.com"
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCjmswWQ3bFqDTCOGCYq68qBcH24hTajw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

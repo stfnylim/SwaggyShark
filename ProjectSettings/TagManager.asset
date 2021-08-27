@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Border
+  - Enemy
+  - DiscoBall
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -38,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1047161777
+    locked: 0
+  - name: Sand
+    uniqueID: 3845947877
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
