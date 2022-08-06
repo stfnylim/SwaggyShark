@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class DiscoBall : MonoBehaviour
 {
-    
+    void OnBecameInvisible(){
+        Destroy(this.gameObject);
+    }
 }

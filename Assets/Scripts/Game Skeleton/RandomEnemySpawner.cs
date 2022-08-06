@@ -30,53 +30,64 @@ public class RandomEnemySpawner : MonoBehaviour
 
         
     }
+    public void setDiscoTime(bool disco){
+        discoTime = disco;
+       
+        
 
+    }
     void FixedUpdate()
     {
         currentDistance = Vector3.Distance(spawnPoints[1].position, temp.transform.position);
 
-        if(Time.time> nextActionTime && currentDistance > distance ){ // Execute random enemy spawner every period number of seconds
-            nextActionTime += period;
-            int randEnemy = Random.Range(0, enemyPrefabs.Length);
-            int randSpawnPoint = Random.Range(0, spawnPoints.Length);
-            int randDiscoPoint = Random.Range(0, discoSpawnPoints.Length);
-            int randCoinPoint = Random.Range(0, coinSpawnPoints.Length);
-            /**
-            Instantiate(coin, coinSpawnPoints[2].position, transform.rotation);
-            Instantiate(coin, coinSpawnPoints[0].position, transform.rotation);
-            Instantiate(coin, coinSpawnPoints[1].position, transform.rotation);
-            */
+        // check if it's ~disco time~ yet
 
-            if(discoTime && Time.time > nextPartyTime){
-                nextPartyTime += 10* period;
-                //randomCoinSpawn(randSpawnPoint,randCoinPoint);
-            }
-            else if(discoTime&& Time.time <= nextPartyTime){
-                discoTime = false;
+        if(discoTime){
+            nextDiscoTime += nextActionTime;
+            if(Time.time < period * 10){
+                if(Time.time > nextDiscoTime && currentDistance > distance/2  ){
+                    nextDiscoTime += period/2;
+                    randomCoinSpawn(0);
+                    randomCoinSpawn(1);
+                    randomCoinSpawn(2);
+                }
             }
             else{
-                if(randDiscoPoint != 0 && randSpawnPoint == 0 && randCoinPoint == 0|| randSpawnPoint != 0 && randDiscoPoint == 0 && randCoinPoint != 0){
-                    randomDiscoSpawn(randDiscoPoint);
-                }
-                temp = randomEnemySpawn(randEnemy, randSpawnPoint);
+                setDiscoTime(false);
+            }
+        }
+        else{
 
-                if(randSpawnPoint != randCoinPoint){
-                    randomCoinSpawn(randCoinPoint);
+            if(Time.time> nextActionTime && currentDistance > distance ){ // Execute random enemy spawner every period number of seconds
+                nextActionTime += period;
+                int randEnemy = Random.Range(0, enemyPrefabs.Length);
+                int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+                int randDiscoPoint = Random.Range(0, discoSpawnPoints.Length);
+                int randCoinPoint = Random.Range(0, coinSpawnPoints.Length);  
+
+                if(discoTime && Time.time > nextPartyTime){
+                    nextPartyTime += 10* period;
+                    //randomCoinSpawn(randSpawnPoint,randCoinPoint);
                 }
-                currentDistance = Vector3.Distance(spawnPoints[randSpawnPoint].position, temp.transform.position);
-                //Debug.Log("The distance is : " + currentDistance);
+                else if(discoTime&& Time.time <= nextPartyTime){
+                    discoTime = false;
+                }
+                else{
+                    if(randDiscoPoint != 0 && randSpawnPoint == 0 && randCoinPoint == 0|| randSpawnPoint != 0 && randDiscoPoint == 0 && randCoinPoint != 0){
+                        randomDiscoSpawn(randDiscoPoint);
+                    }
+                    temp = randomEnemySpawn(randEnemy, randSpawnPoint);
+
+                    if(randSpawnPoint != randCoinPoint){
+                        randomCoinSpawn(randCoinPoint);
+                    }
+                    currentDistance = Vector3.Distance(spawnPoints[randSpawnPoint].position, temp.transform.position);
+                    //Debug.Log("The distance is : " + currentDistance);
+
+                }
+                
 
             }
-            
-            //currentDistance = Vector3.Distance(spawnPoints[randSpawnPoint].position, temp.transform.position);
-            //Debug.Log("The distance is : " + currentDistance);
-
-            /**
-            Debug.Log("Number of Enemy: "+ numberOfEnemy + 
-            " Spawn Position: " + spawnPoints[randSpawnPoint].position);
-            numberOfEnemy++;
-            */
-
         }
         
     }

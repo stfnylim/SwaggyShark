@@ -22,9 +22,6 @@ public class PlayerCollision : MonoBehaviour
             gameHandler.EndGame();
             
         }
-        else if(collision.gameObject.tag == "DiscoBall"){
-            enemySpawner.discoTime = true;
-        }
         
         
     }
@@ -38,6 +35,8 @@ public class PlayerCollision : MonoBehaviour
 
         }
         else if(other.transform.tag == "DiscoBall"){
+            enemySpawner.setDiscoTime(true);
+            
             Destroy(other.gameObject);
         }
     }

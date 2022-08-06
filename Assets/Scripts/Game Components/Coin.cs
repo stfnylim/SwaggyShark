@@ -5,7 +5,6 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     private GameHandler gameHandler;
-    AudioSource coinAudio;
 
     void Awake(){
         gameHandler = FindObjectOfType<GameHandler>();
