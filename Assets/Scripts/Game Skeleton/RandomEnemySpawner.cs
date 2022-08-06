@@ -35,8 +35,6 @@ public class RandomEnemySpawner : MonoBehaviour
     {
         currentDistance = Vector3.Distance(spawnPoints[1].position, temp.transform.position);
 
-
-        Debug.Log("The distance is : " + currentDistance);
         if(Time.time> nextActionTime && currentDistance > distance ){ // Execute random enemy spawner every period number of seconds
             nextActionTime += period;
             int randEnemy = Random.Range(0, enemyPrefabs.Length);
@@ -57,7 +55,7 @@ public class RandomEnemySpawner : MonoBehaviour
                 discoTime = false;
             }
             else{
-                if(randDiscoPoint != randSpawnPoint){
+                if(randDiscoPoint != 0 && randSpawnPoint == 0 && randCoinPoint == 0|| randSpawnPoint != 0 && randDiscoPoint == 0 && randCoinPoint != 0){
                     randomDiscoSpawn(randDiscoPoint);
                 }
                 temp = randomEnemySpawn(randEnemy, randSpawnPoint);

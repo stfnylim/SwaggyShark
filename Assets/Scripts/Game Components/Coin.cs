@@ -5,10 +5,13 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     private GameHandler gameHandler;
+    AudioSource coinAudio;
 
     void Awake(){
         gameHandler = FindObjectOfType<GameHandler>();
     }
+
+
     /**
     void OnCollisionEnter2D(Collision2D collision){
         Destroy(this.gameObject);

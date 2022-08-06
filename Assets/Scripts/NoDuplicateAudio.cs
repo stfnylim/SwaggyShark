@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestroyAudio : MonoBehaviour
+public class NoDuplicateAudio : MonoBehaviour
 {
-
     static Object instance = null;
     void Awake(){
         if(instance != null){

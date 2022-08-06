@@ -10,6 +10,7 @@ public class GameHandler : MonoBehaviour
     private int coins = 0;
     public float delay = 1f;
 
+    public bool getGameHasEnded(){return gameHasEnded;}
     public void EndGame(){
         if(gameHasEnded == false){ // so that the end game function will only be called once.
             gameHasEnded = true;
