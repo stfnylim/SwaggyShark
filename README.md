@@ -29,13 +29,15 @@ Features:
 
 -> Coin spawning and bank account has been added
 
--> Background music
+-> Background music & coin sound effects & losing sound effects
 
 TODO:
 
 -> Creating a global variable for the collected coins, for later spending
 
--> Sound effects
+-> Disco Time sometimes deletes random enemy spawner or doesn't spawn coins
 
--> Disco balls sometimes spawn in enemy
+-> Music for Disco Time
+
+
 
